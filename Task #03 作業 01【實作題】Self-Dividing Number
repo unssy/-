@@ -1,0 +1,27 @@
+def is_self_dividing(n):
+  digit_lst = [int(i) for i in str(n)]
+for d in digit_lst:
+if d == 0 or n % d != 0:
+return False
+return True
+
+def max_self_dividing_difference(left,right):
+
+  max_diff = 0
+  max_pair = None
+for i in range(left,right):
+for j in range(i+1,right+1):
+if is_self_dividing(i) and is_self_dividing(j):
+        diff = j - i
+if diff > max_diff:
+          max_diff = diff
+          max_pair = (i, j)
+return max_pair
+
+
+left = int(input("請輸入下限:"))
+right = int(input("請輸入上限:"))
+
+max_pair = max_self_dividing_difference(left,right)
+
+print(f"差距最大的 Self-Dividing Number 是 {max_pair[0]} 與 {max_pair[1]}，差距為 {max_pair[1] - max_pair[0]}")
