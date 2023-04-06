@@ -1,0 +1,16 @@
+
+s = input("請輸入一個字串：")
+pos = 0
+result = ""
+
+i1 = s.find("not", pos)
+print(i1)
+i2 = s.find("at all", i1) 
+print(i2)
+print(s[pos:i1])
+print(s[i2+6:])
+result += s[pos:i1] + "good" + s[i2+6:]
+print(result)
+'''
+
+print(d) # This company is good.
